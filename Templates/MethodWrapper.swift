@@ -472,7 +472,7 @@ class MethodWrapper {
         return """
         let willReturn: [\(returnTypeString)] = []
         \t\t\tlet given: \(prefix)Given = { \(givenConstructor(prefix: prefix)) }()
-        \t\t\tlet stubber = given.stub(for: (\(returnTypeString)).self)
+        \t\t\tlet stubber = given.stub(for: \(returnTypeString).self)
         \t\t\twillProduce(stubber)
         \t\t\treturn given
         """
@@ -483,7 +483,7 @@ class MethodWrapper {
         return """
         let willThrow: [Error] = []
         \t\t\tlet given: \(prefix)Given = { \(givenConstructorThrows(prefix: prefix)) }()
-        \t\t\tlet stubber = given.stubThrows(for: (\(returnTypeString)).self)
+        \t\t\tlet stubber = given.stubThrows(for: \(returnTypeString).self)
         \t\t\twillProduce(stubber)
         \t\t\treturn given
         """
